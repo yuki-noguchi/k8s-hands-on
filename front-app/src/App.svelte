@@ -1,6 +1,6 @@
 <script lang="ts">
   let mihikoImg = "images/michiko.jpg";
-  let name: string;
+  let name: string = "";
 
   const handleKeyDown = (event: CustomEvent | KeyboardEvent) => {
     event = event as KeyboardEvent;
@@ -8,18 +8,39 @@
       // post
     }
   };
+
+  const handleSubmit = () => {
+    // post
+  };
 </script>
 
 <main>
-  <img src={mihikoImg} alt="みちこさま" />
+  <div class="main-container">
+    <div class="main-image-container">
+      <img src={mihikoImg} alt="みちこさま" />
+    </div>
+    <div class="input-container">
+      <input
+        bind:value={name}
+        placeholder="名前を入力してね"
+        onkeydown={handleKeyDown}
+      />
+      <button on:click={handleSubmit}>褒められる！</button>
+    </div>
+  </div>
 </main>
 
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-image-container {
+    padding-bottom: 20px;
   }
 
   img {
