@@ -1,0 +1,6 @@
+{
+  "editor.fomatOnSave": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
+}

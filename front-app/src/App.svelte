@@ -1,30 +1,36 @@
-<script>
-	export let name;
+<script lang="ts">
+  let mihikoImg = "images/michiko.jpg";
+  let name: string;
+
+  const handleKeyDown = (event: CustomEvent | KeyboardEvent) => {
+    event = event as KeyboardEvent;
+    if (event.key === "Enter") {
+      // post
+    }
+  };
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <img src={mihikoImg} alt="みちこさま" />
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  img {
+    border-radius: 50%; /* 角丸半径を50%にする(=円形にする) */
+    width: 180px; /* ※縦横を同値に */
+    height: 180px; /* ※縦横を同値に */
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
 </style>
