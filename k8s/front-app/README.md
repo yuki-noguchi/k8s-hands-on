@@ -4,7 +4,7 @@
 
 ```
 cd /path/to/k8s-handson
-docker build -f k8s/front-app/Dockerfile -t michiko:1.0 --build-arg APP_FILE_BASE_DIR=front-app .
+docker build -f k8s/front-app/Dockerfile -t michiko-front:1.0 --build-arg APP_FILE_BASE_DIR=front-app .
 ```
 
 ## docker run

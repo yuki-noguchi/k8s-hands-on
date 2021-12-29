@@ -15,7 +15,7 @@ public class PraiseController {
 
 	private static final List<String> PRAISE_WORDS = List.of("最高だぜ！！！", //
 			"あんたにはかなわねえよ、", //
-			"あんがナンバーワンだ・・・", //
+			"お前がニャンバーワンだ・・・", //
 			"こいつ、戦いの中で成長してやがる・・・！なんてやつだ、", //
 			"べ、別に今回はわざと負けてあげただけなんだからね！", //
 			"俊足の", //
