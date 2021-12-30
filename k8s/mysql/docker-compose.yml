@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - 13306:3306
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./init/:/docker-entrypoint-initdb.d/
+    command: mysqld
