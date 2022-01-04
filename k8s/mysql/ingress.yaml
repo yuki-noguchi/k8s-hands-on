@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: front-end-ingress
+  name: mysql-ingress
 spec:
   rules:
-    - host: "michiko.praise.com"
+    - host: "mysql.michiko.praise.com"
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: front-end-service
+                name: mysql-service
                 port:
-                  number: 80
+                  number: 13306

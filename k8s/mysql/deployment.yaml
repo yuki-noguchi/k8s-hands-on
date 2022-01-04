@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-end-deployment
+  name: mysql-deployment
   labels:
-    component: front-end
+    component: mysql
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      component: front-end
+      component: mysql
   template:
     metadata:
       labels:
-        component: front-end
+        component: mysql
     spec:
       containers:
-        - name: front-end
-          image: michiko/front:1.0
+        - name: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: password # 本番ではsecretを使ってねとある
+          image: michiko/mysql8:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -24,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: front-end-service
+  name: mysql-service
 spec:
   selector:
-    component: front-end
+    component: mysql
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 13306
+      targetPort: 3306
