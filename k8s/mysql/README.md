@@ -1,10 +1,10 @@
-# フロントエンド用 k8s 環境構築
+# MySQL k8s 環境構築
 
 ## docker build
 
 ```
-cd /path/to/k8s-handson
-docker build -f k8s/front-app/Dockerfile -t michiko/front:1.0 --build-arg APP_FILE_BASE_DIR=front-app .
+cd /path/to/k8s-handson/k8s/mysql
+docker compose up
 ```
 
 ## docker run
@@ -16,7 +16,8 @@ docker run -d -p 80:80 michiko:1.0
 ## k8s apply
 
 ```
-cd /path/to/k8s-handson
-kubectl apply -f k8s/front-app/deployment.yaml
-kubectl apply -f k8s/front-app/ingress.yaml
+cd /path/to/k8s-handson/k8s/mysql
+kubectl create configmap mysql-server-initdb-config --from-file=init/init.sql
+kubectl create configmap mysql-server-conf-config --from-file=conf/my.cnf
+kubectl apply -f deployment.yaml
 ```

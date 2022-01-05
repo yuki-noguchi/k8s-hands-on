@@ -1,5 +1,5 @@
 <script lang="ts">
-  const url = "http://api.michiko.praise.com/praise/";
+  const baseUrl = "http://api.michiko.praise.com/praise/";
   let mihikoImg = "images/michiko.jpg";
   let name = "";
   let praised = "";

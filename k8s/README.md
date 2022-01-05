@@ -8,7 +8,7 @@
 sh /path/to/k8s-handson/k8s/start.sh
 ```
 
-ローカルブラウザで試すには、以下が必要です。
+ブラウザで試すには、以下が必要です。
 
 ```
 minikbe ip
@@ -20,7 +20,7 @@ sudo vi /etc/hosts
 # 取得できたIPアドレス api.michiko.praise.com
 ```
 
-ブラウザに以下のアドレスにすることができます。
+ブラウザから以下のアドレスにアクセスすることができます。
 
 ```
 http://michiko.praise.com
@@ -39,7 +39,7 @@ sh /path/to/k8s-handson/k8s/drop.sh
 ```
 
 ```
-minikbe ip
+minikube ip
 
 sudo vi /etc/hosts
 
