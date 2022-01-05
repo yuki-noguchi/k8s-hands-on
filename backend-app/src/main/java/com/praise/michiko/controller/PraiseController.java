@@ -34,13 +34,11 @@ public class PraiseController {
 	}
 
 	@GetMapping("/list")
-	@CrossOrigin
 	public List<PraiseWord> list() {
 		return repository.findAll();
 	}
 
 	@PostMapping("/")
-	@CrossOrigin
 	public EmptyResponse create(@RequestBody PraiseWordCreateBody body) {
 		PraiseWord entity = new PraiseWord();
 		entity.word = body.word;
