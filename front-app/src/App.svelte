@@ -115,9 +115,9 @@
   }
 
   img {
-    border-radius: 50%; /* 角丸半径を50%にする(=円形にする) */
-    width: 180px; /* ※縦横を同値に */
-    height: 180px; /* ※縦横を同値に */
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
   }
 
   .praised {
@@ -128,14 +128,14 @@
   }
 
   .overlay {
-    position: absolute; /* overlayの絶対位置を左上を起点にし幅と高さを100%にする */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px); /* 一番下のbody領域をぼやかす */
-    z-index: 5; /* z-indexの数字を0と10の間の数字にし、bodyとmodalの真ん中に位置させる */
+    backdrop-filter: blur(3px);
+    z-index: 5;
   }
 
   .modal {
@@ -145,15 +145,9 @@
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* modalに影を作る */
-    z-index: 10; /* z-indexでmodalを一番上に位置させる */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
     width: 30%;
     padding: 10px;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
   }
 </style>

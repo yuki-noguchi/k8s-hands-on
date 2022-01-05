@@ -1,16 +1,10 @@
 # MySQL k8s 環境構築
 
-## docker build
+## docker compose up
 
 ```
 cd /path/to/k8s-handson/k8s/mysql
 docker compose up
-```
-
-## docker run
-
-```
-docker run -d -p 80:80 michiko:1.0
 ```
 
 ## k8s apply
