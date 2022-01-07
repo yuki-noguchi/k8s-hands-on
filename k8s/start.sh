@@ -7,7 +7,7 @@ minikube start --driver=hyperkit
 minikube addons enable ingress
 eval $(minikube -p minikube docker-env)
 
-cd ../${SCRIPT_DIR}
+cd ..
 
 echo フロントエンドのビルドを実行します。
 docker build -f ${SCRIPT_DIR}/front-app/Dockerfile -t michiko/front:1.0 --build-arg APP_FILE_BASE_DIR=front-app .
