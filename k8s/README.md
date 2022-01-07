@@ -1,5 +1,14 @@
 # k8s 環境構築
 
+## 事前準備
+
+```
+brew install minikube
+brew install
+```
+
+**また、VPN 経由だと失敗します。**
+
 ## 開始
 
 割と時間かかります。

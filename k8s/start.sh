@@ -2,6 +2,8 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
+export KUBECONFIG=~/.kube/config
+
 echo minikubeを起動します。
 minikube start --driver=hyperkit
 minikube addons enable ingress
