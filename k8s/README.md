@@ -4,7 +4,7 @@
 
 ```
 brew install minikube
-brew install
+brew install hyperkit
 ```
 
 **また、VPN 経由だと失敗します。**
@@ -14,7 +14,7 @@ brew install
 割と時間かかります。
 
 ```
-sh /path/to/k8s-handson/k8s/start.sh
+sh /path/to/k8s-hands-on/k8s/start.sh
 ```
 
 ブラウザで試すには、以下が必要です。
@@ -44,7 +44,7 @@ minikube dashboard
 ## 終了
 
 ```
-sh /path/to/k8s-handson/k8s/drop.sh
+sh /path/to/k8s-hands-on/k8s/drop.sh
 ```
 
 ```
