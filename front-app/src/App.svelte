@@ -1,10 +1,14 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   const baseUrl = "http://api.michiko.praise.com/praise/";
+
   let mihikoImg = "images/michiko.jpg";
   let name = "";
   let praised = "";
   let showAddModal = false;
   let addingPraiseWord = "";
+  let praiseWords: string[] = [];
 
   const addPraiseWord = async () => {
     if (!addingPraiseWord) {
@@ -17,6 +21,7 @@
       },
       body: JSON.stringify({ word: addingPraiseWord }),
     });
+    fetchPraiseWords();
     showAddModal = false;
     addingPraiseWord = "";
   };
@@ -28,6 +33,12 @@
     const res = await fetch(baseUrl + "random");
     const json = await res.json();
     praised = json.word;
+  };
+
+  const fetchPraiseWords = async () => {
+    const res = await fetch(baseUrl + "list");
+    const json: Array<any> = await res.json();
+    praiseWords = json.map((item) => item.word);
   };
 
   const handleNameInputPress = async (e: KeyboardEvent) => {
@@ -53,6 +64,10 @@
   const handleAddButtonClicked = () => {
     showAddModal = true;
   };
+
+  onMount(async () => {
+    fetchPraiseWords();
+  });
 </script>
 
 <main>
@@ -76,6 +91,19 @@
       {/if}
     </div>
     <button on:click={handleAddButtonClicked}>褒め言葉を追加する</button>
+    <div>
+      <h3 style="text-align:center;">登録済の褒め言葉一覧</h3>
+      {#if !praiseWords.length}
+        <p class="warn">
+          まだ褒め言葉が登録されていなので、自分で登録しましょう！
+        </p>
+      {/if}
+      <ul>
+        {#each praiseWords as registerdWord}
+          <li>{registerdWord}</li>
+        {/each}
+      </ul>
+    </div>
   </div>
 </main>
 {#if showAddModal}
@@ -149,5 +177,9 @@
     z-index: 10;
     width: 30%;
     padding: 10px;
+  }
+
+  .warn {
+    color: red;
   }
 </style>
